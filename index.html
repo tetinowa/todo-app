@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="app">
+      <div class="bodycontainer">
+        <div class="head">
+          <div class="head-text">
+            <div class="head-text-title">
+              <h1>To-Do List</h1>
+            </div>
+
+            <div class="input-container">
+              <div class="input">
+                <input
+                  type="text"
+                  id="textInput"
+                  placeholder="Add a new task"
+                />
+              </div>
+              <button class="task-add-button">Add</button>
+            </div>
+
+            <div class="filter-container">
+              <div class="filter-cont">All</div>
+              <div class="filter-cont">Active</div>
+              <div class="filter-cont">Completed</div>
+            </div>
+          </div>
+          <div class="tasks-insert">
+            <p class="task-placeholdertext">No tasks yet. Add one above!</p>
+          </div>
+          <div class="list"></div>
+        </div>
+        <div class="foot">
+          <p>Powered by</p>
+          <p>Pinecone academy</p>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

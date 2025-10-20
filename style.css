@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: "Inter";
+  background-color: #f3f4f6;
+}
+.app {
+  display: flex;
+  justify-content: center;
+}
+
+.bodycontainer {
+  display: flex;
+  flex-direction: column;
+  width: 377px;
+  height: auto;
+  position: relative;
+  top: 140px;
+  border-radius: 6px;
+  padding: 24px 16px;
+  gap: 40px;
+  background-color: #ffffff;
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.head-text {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.head-text-title {
+  display: flex;
+  justify-content: center;
+}
+
+.head-text-title h1 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: -2.5%;
+  color: #000000;
+}
+
+.input-container {
+  display: flex;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 300;
+  color: #71717a;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  width: 280px;
+  height: 40px;
+  border-radius: 6px;
+  border: 1px solid #e4e4e7;
+  padding: 8px 16px;
+}
+
+.task-add-button {
+  height: 40px;
+  border-radius: 6px;
+  border: transparent;
+  padding: 8px 16px;
+  gap: 10px;
+  background-color: #3c82f6;
+  color: white;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.filter-container {
+  display: flex;
+  gap: 6px;
+}
+
+.filter-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 32px;
+  border-radius: 6px;
+  padding: 4px 12px;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 300;
+  color: black;
+  background-color: #f3f4f6;
+}
+
+.filter-cont:nth-child(1) {
+  background-color: #3c82f6;
+  color: white;
+}
+
+.tasks-insert {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tasks-insert p {
+  font-size: 14px;
+  font-weight: 300;
+  color: #6b7280;
+}
+
+#textInput {
+  border: transparent;
+  outline: none;
+  font-size: 14px;
+  font-weight: 300;
+  color: #6b7280;
+}
+
+.foot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.foot p {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.foot p:first-child {
+  color: #6b7280;
+}
+
+.foot p:last-child {
+  color: #3b73ed;
+}
