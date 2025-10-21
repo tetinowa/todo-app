@@ -145,3 +145,47 @@ body {
 .foot p:last-child {
   color: #3b73ed;
 }
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.list .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 345px;
+  height: 62px;
+  gap: 10px;
+  border-radius: 6px;
+  padding: 16px;
+  background-color: #f9fafb;
+  font-size: 14px;
+  font-weight: 400;
+}
+.checkbox {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #767676;
+  border-radius: 2px;
+}
+
+.item-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.delete-btn {
+  background-color: #fef2f2;
+  border: transparent;
+  border-radius: 6px;
+  padding: 6px 12px;
+  gap: 10px;
+  color: #ef4444;
+  font-size: 14px;
+  font-weight: 400;
+}
