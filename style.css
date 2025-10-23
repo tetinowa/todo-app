@@ -101,7 +101,7 @@ body {
   background-color: #f3f4f6;
 }
 
-.filter-cont:nth-child(1) {
+.filter-cont:focus {
   background-color: #3c82f6;
   color: white;
 }
@@ -192,4 +192,33 @@ body {
 
 .strikethrough {
   text-decoration: line-through;
+}
+
+.checkbox:checked + p {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+.input:active {
+  border: 1px solid #565658;
+  box-shadow: 0 0 0 4px rgba(59, 115, 237, 0.3);
+  outline: none;
+}
+
+.task-track {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 300;
+  border-top: #e4e4e7 1px solid;
+  padding: 16px 0 4px 0;
+}
+
+.task-track p:first-child {
+  color: #6b7280;
+}
+.task-track p:last-child {
+  color: #ef4444;
+  cursor: pointer;
 }

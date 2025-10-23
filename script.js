@@ -1,63 +1,10 @@
-// // const list = document.querySelector(".list");
-// // const addButton = document.querySelector(".task-add-button");
-// // const input = document.getElementById("textInput");
-
-// // addButton.addEventListener("click", () => {
-// //   const value = input.value.trim();
-// //   if (value === "") return;
-
-// //   const li = document.createElement("li");
-
-// //   const textSpan = document.createElement("span");
-// //   textSpan.textContent = value;
-// //   textSpan.addEventListener("click", () => {
-// //     textSpan.classList.toggle("done");
-// //   });
-
-// //   const delBtn = document.createElement("button");
-// //   delBtn.textContent = "❌";
-// //   delBtn.classList.add("delete-btn");
-// //   delBtn.addEventListener("click", () => {
-// //     li.remove();
-// //   });
-
-// //   li.appendChild(textSpan);
-// //   li.appendChild(delBtn);
-
-// //   list.appendChild(li);
-// //   input.value = "";
-// // });
-
-// const list = document.querySelector(".list");
-// const addButton = document.querySelector(".task-add-button");
-// const input = document.getElementById("textInput");
-
-// let content = "";
-
-// const listItem = (content) => {
-//   return `<div class="item">
-//   <div class="item-inner">
-//   <input type="checkbox"></input>
-//   ${content}
-//   </div>
-//   <button class="delete-btn">Delete</button></div>`;
-// };
-
-// addButton.addEventListener("click", () => {
-//   const value = input.value;
-//   content += listItem(value);
-//   list.innerHTML = content;
-// });
-
-// const delBtn = document.querySelectorAll(".delete-btn");
-
-// delBtn.forEach.addEventListener("click", () => {});
-
 const list = document.querySelector(".list");
 const input = document.getElementById("textInput");
 const addBtn = document.querySelector(".task-add-button");
 const buttons = document.querySelectorAll(".filter-container .filter-cont");
 const checkbox = document.querySelectorAll(".checkbox");
+let taskTrack = document.querySelector(".task-track p:first-child");
+const clearCompleted = document.querySelector(".task-track p:last-child");
 
 let content = [];
 let type = "All";
@@ -67,9 +14,11 @@ let id = 1;
 const ListItem = (item) => {
   return `
     <div class="item">
-      <input class="checkbox" type="checkbox" ${item.isDone ? "checked" : ""} />
+      <input id="${item.id}" class="checkbox" type="checkbox" ${
+    item.isDone ? "checked" : ""
+  } />
       <p>${item.text}</p>
-      <button class="delete-btn">Delete</button>
+      <button id="${item.id}" class="delete-btn">Delete</button>
     </div>
   `;
 };
@@ -121,6 +70,10 @@ const render = () => {
   list.innerHTML = elements;
 
   addListeners();
+
+  taskTrack.textContent = `${content.filter((item) => item.isDone).length} of ${
+    content.length
+  } tasks completed`;
 };
 
 const addListeners = () => {
@@ -143,6 +96,17 @@ const addListeners = () => {
   });
 };
 
-// checkbox.forEach ((btn, i) => {
-//   .addEventListener("click", () => {
-// })
+const checkboxes = document.querySelectorAll(".checkbox");
+
+checkboxes.forEach((checkbox) =>
+  checkbox.addEventListener("click", () => {
+    const item = content.find((item) => item.id == checkbox.id);
+    item.isDone = !item.isDone;
+    render();
+  })
+);
+
+clearCompleted.addEventListener("click", () => {
+  content = content.filter((item) => !item.isDone);
+  render();
+});
