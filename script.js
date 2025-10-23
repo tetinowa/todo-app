@@ -58,6 +58,14 @@ buttons.forEach((btn, i) => {
 });
 
 const render = () => {
+  const placeholder = document.querySelector(".task-placeholdertext");
+
+  if (content.length === 0) {
+    placeholder.style.display = "block";
+  } else {
+    placeholder.style.display = "none";
+  }
+
   const elements = content
     .filter((item) => {
       if (type === "All") return true;

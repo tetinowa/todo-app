@@ -101,7 +101,7 @@ body {
   background-color: #f3f4f6;
 }
 
-.filter-cont:focus {
+.filter-cont.chosen {
   background-color: #3c82f6;
   color: white;
 }
@@ -118,12 +118,18 @@ body {
   color: #6b7280;
 }
 
+.input:focus-within {
+  border: 2px solid #2463eb;
+  color: #000000;
+  font-weight: 700;
+}
+
 #textInput {
   border: transparent;
   outline: none;
   font-size: 14px;
   font-weight: 300;
-  color: #6b7280;
+  color: #000000;
 }
 
 .foot {
@@ -197,12 +203,6 @@ body {
 .checkbox:checked + p {
   text-decoration: line-through;
   color: #9ca3af;
-}
-
-.input:active {
-  border: 1px solid #565658;
-  box-shadow: 0 0 0 4px rgba(59, 115, 237, 0.3);
-  outline: none;
 }
 
 .task-track {
