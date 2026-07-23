@@ -24,15 +24,18 @@ const ListItem = (item) => {
 };
 
 addBtn.addEventListener("click", () => {
+  const text = input.value.trim();
+  if (!text) return;
+
   content.push({
     id: id,
-    text: input.value,
+    text: text,
     isDone: false,
   });
 
   id++;
 
-  console.log(content);
+  input.value = "";
 
   render();
 });
@@ -87,18 +90,19 @@ const render = () => {
 const addListeners = () => {
   const deleteBtns = document.querySelectorAll(".delete-btn");
 
-  deleteBtns.forEach((btn, i) => {
+  deleteBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
-      content = content.filter((item, index) => index !== i);
+      content = content.filter((item) => item.id != btn.id);
       render();
     });
   });
 
   const checkboxes = document.querySelectorAll(".checkbox");
 
-  checkboxes.forEach((checkbox, i) => {
+  checkboxes.forEach((checkbox) => {
     checkbox.addEventListener("click", () => {
-      content[i].isDone = !content[i].isDone;
+      const item = content.find((item) => item.id == checkbox.id);
+      item.isDone = !item.isDone;
       render();
     });
   });
