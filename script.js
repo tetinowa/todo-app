@@ -122,3 +122,5 @@ clearCompleted.addEventListener("click", () => {
   content = content.filter((item) => !item.isDone);
   render();
 });
+
+render();
